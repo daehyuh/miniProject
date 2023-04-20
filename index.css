@@ -9,6 +9,9 @@ height: auto;
 background: #9C9C9C;
 margin: 0px auto;
 padding: 0px auto;
+
+display: flex;
+justify-content : center;
 }
 
 /* 메인배경*/
@@ -20,7 +23,7 @@ height: auto;
 
 margin-top: 175px;
 /* padding-bottom: 100px; */
-left: 642px;
+
 background: #262626;
 }
 
@@ -34,13 +37,18 @@ top: 0px;
 background: #000000;
 }
 
+.headerdiv{
+    width: 100%;
+    position: relative;
+}
+
 /* 팻스타그램 메인문구 */
 .maintext{
-position: fixed;
-width: 247.3px;
+position: absolute;
+width: 250px;
 height: auto;
-left: 838.2px;
-top: 9px;
+left: 200px;
+top: 10px;
 
 font-family: 'Butterfly Kids';
 font-style: normal;
@@ -58,18 +66,19 @@ transform: rotate(0.15deg);
     position: absolute;
     width: 85px;
     height: 85px;
-    right: 0px;
+    top : 10px;
+    right: 30px;
 }
 .upload:hover{
     box-shadow: 0 0 0 1px #ffffff inset;
 }
 /* 검색창 */
 .searchbar{
-position: fixed;
+position: absolute;
 width: 400px;
 height: 60px;
-left: 723px;
 top: 100px;
+left: 70px;
 font-family: 'Oxanium';
 font-style: normal;
 font-weight: 200;
@@ -84,15 +93,15 @@ border: 1px solid #000000;
 
 /* 검색버튼 */
 .searchbtn{
-position: fixed;
+position: absolute;
 font-family: 'Oxanium';
 font-style: normal;
 font-weight: 200;
 font-size: 30px;
 width: 110px;
 height: 69px;
-left: 1140px;
 top: 96px;
+left: 500px;
 }
 .searchbtn:hover{
     border: solid #ffffff;

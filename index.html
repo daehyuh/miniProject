@@ -91,7 +91,7 @@
                 }]
                 writeIndexedDB(data2);     
   
-  function selectAllIndexedDB() {
+  function selectAllIndexedDBAndAddPost() {
       var request = window.indexedDB.open('catstagramTable');
       
       request.onerror = function(event) {
@@ -128,7 +128,7 @@
                       }
                     }
                     
-                    a = `<div class="post" style=" cursor: pointer;" onclick="window.open('detail?id=`+event.target.result.id+`');">
+                    a = `<div class="post" style=" cursor: pointer;" onclick="window.open('detail.html?id=`+event.target.result.id+`');">
                               <div class="postuserdiv">
                                 <div class="postusericon">
                                 <svg width="62" height="62" viewBox="0 0 62 62" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -165,8 +165,8 @@
   <main>
     <header>
       <div class="headerdiv">
-      <div class="maintext">Petstagram</div>
-      <div class="upload" onclick="window.open('upload')"><svg width="90" height="90" viewBox="0 0 90 90" fill="none" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" >
+      <div class="maintext" onclick="window.open('index.html');">Petstagram</div>
+      <div class="upload" onclick="window.open('upload.html')"><svg width="90" height="90" viewBox="0 0 90 90" fill="none" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" >
         <rect width="90" height="90" fill="url(#pattern0)"/>
         <defs>
         <pattern id="pattern0" patternContentUnits="objectBoundingBox" width="1" height="1">
@@ -177,13 +177,13 @@
         </svg>
         </div>
       <input class="searchbar" type="text" id="searchbar">
-      <input class="searchbtn" type="button" value="search" style=" cursor: pointer;" onclick="window.open('search?key='+document.getElementById('searchbar').value);">
+      <input class="searchbtn" type="button" value="search" style=" cursor: pointer;" onclick="window.open('search.html?key='+document.getElementById('searchbar').value);">
     </div>
     </header>
 
     <div id="test">
       <script>
-        selectAllIndexedDB()
+        selectAllIndexedDBAndAddPost()
       </script>
     </div>
 

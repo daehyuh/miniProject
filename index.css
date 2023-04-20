@@ -1,229 +1,211 @@
 @import url('https://fonts.googleapis.com/css2?family=Butterfly+Kids&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Oxanium:wght@200&display=swap');
-
+ @import url('https://fonts.googleapis.com/css2?family=Oxanium:wght@200&display=swap');
 /* 메인화면 */
-body{
-position: relative;
-width: auto;
-height: auto;
-background: #9C9C9C;
-margin: 0px auto;
-padding: 0px auto;
-
-display: flex;
-justify-content : center;
+ body{
+     position: relative;
+     width: auto;
+     height: auto;
+     background: #9C9C9C;
+     margin: 0px auto;
+     padding: 0px auto;
+     display: flex;
+     justify-content : center;
 }
-
 /* 메인배경*/
-main{
-position: absolute;
-width: 644px;
-min-height: 1080px;
-height: auto;
-
-margin-top: 175px;
-/* padding-bottom: 100px; */
-
-background: #262626;
+ main{
+     position: absolute;
+     width: 644px;
+     min-height: 1080px;
+     height: auto;
+     margin-top: 175px;
+    /* padding-bottom: 100px;
+     */
+     background: #262626;
 }
-
 /* 상단 고정바 */
-header{
-position: fixed;
-z-index: 1;
-width: 644px;
-height: 175px;
-top: 0px;
-background: #000000;
+ header{
+     position: fixed;
+     z-index: 1;
+     width: 644px;
+     height: 175px;
+     top: 0px;
+     background: #000000;
 }
-
-.headerdiv{
-    width: 100%;
-    position: relative;
+ .headerdiv{
+     width: 100%;
+     position: relative;
 }
-
 /* 팻스타그램 메인문구 */
-.maintext{
-position: absolute;
-width: 250px;
-height: auto;
-left: 200px;
-top: 10px;
-
-font-family: 'Butterfly Kids';
-font-style: normal;
-font-weight: 400;
-font-size: 70px;
-line-height: 83px;
-
-color: #FFFFFF;
-
-transform: rotate(0.15deg);
+ .maintext{
+     position: absolute;
+     width: 250px;
+     height: auto;
+     left: 200px;
+     top: 10px;
+     font-family: 'Butterfly Kids';
+     font-style: normal;
+     font-weight: 400;
+     font-size: 70px;
+     line-height: 83px;
+     color: #FFFFFF;
+     transform: rotate(0.15deg);
 }
-
-/* 업로드버튼  */
-.upload{
+/* 뒤로가기버튼 */
+.back {
     position: absolute;
-    width: 85px;
-    height: 85px;
-    top : 10px;
-    right: 30px;
+    width: 77px;
+    height: 77px;
+    top: 15px;
+    left: 20px;
 }
-.upload:hover{
+.back:hover{
     box-shadow: 0 0 0 1px #ffffff inset;
 }
+/* 업로드버튼 */
+ .upload{
+     position: absolute;
+     width: 85px;
+     height: 85px;
+     top : 10px;
+     right: 30px;
+}
+ .upload:hover{
+     box-shadow: 0 0 0 1px #ffffff inset;
+}
 /* 검색창 */
-.searchbar{
-position: absolute;
-width: 400px;
-height: 60px;
-top: 100px;
-left: 70px;
-font-family: 'Oxanium';
-font-style: normal;
-font-weight: 200;
-font-size: 30px;
-
-background: #FFFFFF;
-border: 1px solid #000000;
+ .searchbar{
+     position: absolute;
+     width: 400px;
+     height: 60px;
+     top: 100px;
+     left: 70px;
+     font-family: 'Oxanium';
+     font-style: normal;
+     font-weight: 200;
+     font-size: 30px;
+     background: #FFFFFF;
+     border: 1px solid #000000;
 }
-.searchbar:hover{
-    border: solid #ffffff;
+ .searchbar:hover{
+     border: solid #ffffff;
 }
-
 /* 검색버튼 */
-.searchbtn{
-position: absolute;
-font-family: 'Oxanium';
-font-style: normal;
-font-weight: 200;
-font-size: 30px;
-width: 110px;
-height: 69px;
-top: 96px;
-left: 500px;
+ .searchbtn{
+     position: absolute;
+     font-family: 'Oxanium';
+     font-style: normal;
+     font-weight: 200;
+     font-size: 30px;
+     width: 110px;
+     height: 69px;
+     top: 96px;
+     left: 500px;
 }
-.searchbtn:hover{
-    border: solid #ffffff;
+ .searchbtn:hover{
+     border: solid #ffffff;
 }
-
 /* 게시글div */
-.post{
-    margin-bottom: 15px;
+ .post{
+     margin-bottom: 15px;
 }
-
 /* 유저div */
-.postuserdiv{
-    display: flex;
-    width: 644px;
-    height: 106px;
-    
-    background: #000000;
+ .postuserdiv{
+     display: flex;
+     width: 644px;
+     height: 106px;
+     background: #000000;
 }
 /* 유저 아이콘 */
-.postusericon{
-    /* position: absolute; */
-    width: 62px; 
-    height: 62px;
-    margin-left: 30px;
-    margin-top: 20px;
+ .postusericon{
+    /* position: absolute;
+     */
+     width: 62px;
+     height: 62px;
+     margin-left: 30px;
+     margin-top: 20px;
 }
 /* 유저 이름 */
-.postusername{
-    /* position: absolute; */
-    width: 350px;
-    height: 69px;
-    margin-left: 15px;
-    margin-top: 20px;
-    font-family: 'Oxanium';
-    font-style: normal;
-    font-weight: 500;
-    font-size: 48px;
-    line-height: 60px;
-    
-    color: #FFFFFF;
+ .postusername{
+    /* position: absolute;
+     */
+     width: 350px;
+     height: 69px;
+     margin-left: 15px;
+     margin-top: 20px;
+     font-family: 'Oxanium';
+     font-style: normal;
+     font-weight: 500;
+     font-size: 48px;
+     line-height: 60px;
+     color: #FFFFFF;
 }
-
 /* 강아지 */
-.image {
-    width: 644px;
-    height: 500px;
-    object-fit: cover;
+ .image {
+     width: 644px;
+     height: 500px;
+     object-fit: cover;
 }
-    
 /* 유저게시물내용1 */
-.postdiv{
-width: 644px;
-height: auto;
-background: #000000;
+ .postdiv{
+     width: 644px;
+     height: auto;
+     background: #000000;
 }
-
 /* daehyun 우리집댕댕이 귀여워.... 너무 귀여워! 🐶🐶🐶 youngjin 우리 고양이가 더 귀여운데...? */
-.postdivtext{
-width: 596px;
-height: auto;
-padding-left: 30px;
-padding-top: 10px;
-font-family: 'Oxanium';
-font-style: normal;
-font-weight: 500;
-font-size: 20px;
-line-height: 30px;
-
-color: #FFFFFF;
+ .postdivtext{
+     width: 596px;
+     height: auto;
+     padding-left: 30px;
+     padding-top: 10px;
+     font-family: 'Oxanium';
+     font-style: normal;
+     font-weight: 500;
+     font-size: 20px;
+     line-height: 30px;
+     color: #FFFFFF;
 }
-
-.postdivcomment{
-    width: 596px;
-    height: 68px;
-    padding-left: 30px;
-    padding-top: 10px;
-    font-family: 'Oxanium';
-    font-style: normal;
-    font-weight: 500;
-    font-size: 20px;
-    line-height: 30px;
-    
-    color: #FFFFFF;
-    }
-    
+ .postdivcomment{
+     width: 596px;
+     height: 68px;
+     padding-left: 30px;
+     padding-top: 10px;
+     font-family: 'Oxanium';
+     font-style: normal;
+     font-weight: 500;
+     font-size: 20px;
+     line-height: 30px;
+     color: #FFFFFF;
+}
 /* 2일전 */
-.postdivtime{
-width: 79px;
-height: 19px;
-padding-left: 30px;
-padding-top: 10px;
-padding-bottom: 10px;
-font-family: 'Oxanium';
-font-style: normal;
-font-weight: 500;
-font-size: 15px;
-line-height: 19px;
-/* identical to box height */
-
-color: #FFFFFF;
+ .postdivtime{
+     width: 79px;
+     height: 19px;
+     padding-left: 30px;
+     padding-top: 10px;
+     padding-bottom: 10px;
+     font-family: 'Oxanium';
+     font-style: normal;
+     font-weight: 500;
+     font-size: 15px;
+     line-height: 19px;
+    /* identical to box height */
+     color: #FFFFFF;
 }
-
-
-
-
 /* 하단 고정바 */
-footer {
-    position: fixed;
-    z-index: 1;
-    width: 644px;
-    height: 100px;
-    bottom: 0px;
-    background: #000000;
-    }
-
+ footer {
+     position: fixed;
+     z-index: 1;
+     width: 644px;
+     height: 100px;
+     bottom: 0px;
+     background: #000000;
+}
 /* 게시물추가 */
-.addimage {
-    position: absolute;
-    width: 90px;
-    height: 90px;
-    left: 919px;
-    top: 989px;
-    
-    background: url(image.png);
-    }
+ .addimage {
+     position: absolute;
+     width: 90px;
+     height: 90px;
+     left: 919px;
+     top: 989px;
+     background: url(image.png);
+}

@@ -8,16 +8,13 @@
   <title>Document</title>
 </head>
 <script>
-  // 지원여부확인
+
   if (!window.indexedDB) {
       window.alert("browser doesn't support IndexedDB")
   } else {
       var db;
       var request = window.indexedDB.open('catstagramTable');
-      
-      // 새로만들거나 버전이 높을때만 발생하는 이벤트 
-      // ObjectStroe를 만들거나 수정할때 이 이벤트내에서 진행
-      // onsuccess는 이 이벤트가 끝나면 발생됩니다.
+    
       request.onupgradeneeded = function(event) {
         var db = event.target.result;
           // person 이라는 이름으로 ObjectStore를 만듬, key를 따로 만들지 않고 자동생성함.
@@ -82,9 +79,17 @@
                   , Comment: []
                 }];
   
+                
   writeIndexedDB(data);
   
-
+  var data2 = [{
+                  id: 4,
+                  name: 'daehyun'
+                  , image: 'dog.png'
+                  , text: '우리집댕댕이 귀여워.... 너무 귀여워! 🐶🐶🐶'
+                  , Comment: ['youngjin 우리 고양이가 더 귀여운데...?','event.target.result.Comment']
+                }]
+                writeIndexedDB(data2);     
   
   function selectAllIndexedDB() {
       var request = window.indexedDB.open('catstagramTable');

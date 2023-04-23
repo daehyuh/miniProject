@@ -53,35 +53,24 @@
         }
       }
     }
-    var data = [{
+    const dummyPosts = [{
       id: 1,
-      name: 'daehyun',
-      image: 'dog.png',
-      text: '우리집댕댕이 귀여워.... 너무 귀여워! 🐶🐶🐶',
-      Comment: ['youngjin 우리 고양이가 더 귀여운데...?', 'event.target.result.Comment']
+      author: 'daehyun',
+      content: '우리집댕댕이 귀여워.... 너무 귀여워! 🐶🐶🐶',
+      imageUrl: ['dog.png','cat.png']
     }, {
       id: 2,
-      name: 'youngjin',
-      image: 'cat.png',
-      text: '우리 고영희씨가 더 귀엽지? 😺😺😺',
-      Comment: []
+      author: 'daehyun',
+      content: '우리집댕댕이 귀여워.... 너무 귀여워! 🐶🐶🐶',
+      imageUrl: ['dog.png','cat.png']
     }, {
       id: 3,
-      name: 'youngjin',
-      image: 'cat.png',
-      text: '우리 고영희씨가 더 귀엽지? 😺😺😺',
-      Comment: []
+      author: 'daehyun',
+      content: '우리집댕댕이 귀여워.... 너무 귀여워! 🐶🐶🐶',
+      imageUrl: ['dog.png','cat.png']
     }];
-    writeIndexedDB(data);
-    var data2 = [{
-      id: 4,
-      name: 'daehyun',
-      image: 'dog.png',
-      text: '우리집댕댕이 귀여워.... 너무 귀여워! 🐶🐶🐶',
-      Comment: ['youngjin 우리 고양이가 더 귀여운데...?', 'event.target.result.Comment']
-    }]
-    writeIndexedDB(data2);
-
+    writeIndexedDB(dummyPosts);
+    
     function selectAllIndexedDBAndAddPost() {
       var request = window.indexedDB.open('catstagramTable');
       request.onerror = function(event) {
@@ -105,16 +94,6 @@
             request.onsuccess = function(event) {
               console.log(event.target.result);
               var a;
-              var b;
-              if (event.target.result.Comment.length == 0) {
-                b = '';
-              } else {
-                if (event.target.result.Comment.length > 1) {
-                  b = event.target.result.Comment[0] + `<br> <div style=" cursor: pointer;" onclick="location.replace('detail.html?id=` + event.target.result.id + `');" style = "text-decoration: underline"> 댓글 더보기 </div>`;
-                } else {
-                  b = event.target.result.Comment[0];
-                }
-              }
               a = `
 							<div class="post">
 								<div class="postuserdiv">
@@ -125,16 +104,14 @@
 										</svg>
 									</div>
 									<div class="postusername">
-                                  ` + event.target.result.name + `
+                                  ` + event.target.result.author + `
                                 </div>
 								</div>
 								<div class="image" style=" cursor: pointer;" onclick="location.replace('detail.html?id=` + event.target.result.id + `');">
-									<img src="` + event.target.result.image + `" width="100%" height="100%">
+									<img src="` + event.target.result.imageUrl[0] + `" width="100%" height="100%">
 									</div>
 									<div class="postdiv">
-										<div class="postdivtext">` + event.target.result.name + " " + event.target.result.text + `</div>
-										<div class="postdivcomment">` + b + `</div>
-										<div class="postdivtime">2일전</div>
+										<div class="postdivtext">` + event.target.result.author + " " + event.target.result.content + `</div>
 									</div>
 								</div>`;
               document.querySelector("main").innerHTML += a;
@@ -150,7 +127,7 @@
       <header>
         <div class="headerdiv">
           <div class="maintext" onclick="location.replace('index.html');">Petstagram</div>
-          <div class="back" onclick="history.back();">
+          <div class="back" onclick='history.go(-1);'>
             <svg width="77" height="77" viewBox="0 0 77 77" fill="none" xmlns="http://www.w3.org/2000/svg">
               <g clip-path="url(#clip0_17_29)">
               <path d="M67.375 35.2917H21.9129L33.3987 23.7737L28.875 19.25L9.625 38.5L28.875 57.75L33.3987 53.2262L21.9129 41.7083H67.375V35.2917Z" fill="white"/>
@@ -162,7 +139,7 @@
               </defs>
               </svg>
           </div>
-
+          
           <div class="upload" onclick="location.replace('upload.html')">
             <svg width="90" height="90" viewBox="0 0 90 90" fill="none" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
               <rect width="90" height="90" fill="url(#pattern0)" />

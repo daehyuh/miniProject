@@ -55,8 +55,8 @@ function initApp() {
                       <div class="postusername">
                       ` + target.author + `
                       </div>
-                      </div> 
-                      <div class="image" style=" cursor: pointer;" onclick="location.href('detail.html?id=` + target.id + `');">
+                      </div>
+                      <div class="image" style=" cursor: pointer;" onclick="location.href='Detail.html?id=` + target.id + `';">
                           <img src="` + target.imageUrl[0] + `" width="100%" height="100%">
                       </div>
                       <div class="postdiv">

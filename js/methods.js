@@ -51,7 +51,7 @@ function initApp() {
     getEntryFromDb('posts').then((posts) => {
       console.log(posts)
     })
-  
+    
     // search post by author
     searchEntry('posts', '강대현').then((posts) => {
         console.log(posts)

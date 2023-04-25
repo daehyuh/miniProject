@@ -23,7 +23,7 @@ function initApp() {
                         </div>`
                     }
                 });
-                
+
         var post = 
         `<div id = "images">
         <div id="carouselExampleControls" class="carousel slide" data-bs-ride="carousel">
@@ -56,8 +56,9 @@ function initApp() {
             `+target.content+`
           </div>
         </div>`;
+            
+            document.querySelector("#post").innerHTML += post;
 
-            document.querySelector("div").innerHTML += post;
             }
         })
         

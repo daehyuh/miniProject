@@ -50,7 +50,7 @@ function initApp() {
         </div>
         <div class = "row" id = "comment">
           <div class = "col-2" id = "user_id">
-            daehyun 
+            `+target.author+`
           </div>
           <div class = "col-10">
             `+target.content+`

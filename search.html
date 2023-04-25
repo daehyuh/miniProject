@@ -4,114 +4,9 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="index.css">
+    <link rel="stylesheet" href="css/index.css">
     <title>Document</title>
   </head>
-  <script>
-    if (!window.indexedDB) {
-      window.alert("browser doesn't support IndexedDB")
-    } else {
-      var db;
-      var request = window.indexedDB.open('catstagramTable');
-      request.onupgradeneeded = function(event) {
-        var db = event.target.result;
-        // person 이라는 이름으로 ObjectStore를 만듬, key를 따로 만들지 않고 자동생성함.
-        var objectStore = db.createObjectStore('person', {
-          keyPath: 'id'
-        });
-      }
-      request.onerror = function(event) {
-        alert('failed');
-      }
-      request.onsuccess = function(event) {
-        db = this.result;
-      }
-    }
-
-    function writeIndexedDB(people) {
-      var request = window.indexedDB.open('catstagramTable');
-      request.onerror = function(event) {
-        alert('Database error: ' + event.target.errorCode);
-      }
-      request.onsuccess = function(event) {
-        var db = this.result;
-        // person ObjectStore에 readwrite(읽기,쓰기) 권한으로 Transaction 생성
-        var transaction = db.transaction(['person'], 'readwrite');
-        // 완료 및 실패 이벤트 제어
-        transaction.oncomplete = function(event) {
-          console.log('done');
-        }
-        transaction.onerror = function(event) {
-          console.log('fail');
-        }
-        var objectStore = transaction.objectStore('person');
-        for (var person of people) {
-          var request = objectStore.add(person);
-          request.onsuccess = function(event) {
-            console.log(event.target.result);
-          }
-        }
-      }
-    }
-    var data = [{
-      id: 1,
-      name: 'daehyun',
-      image: 'dog.png',
-      text: '우리집댕댕이 귀여워.... 너무 귀여워! 🐶🐶🐶',
-      Comment: ['youngjin 우리 고양이가 더 귀여운데...?', 'event.target.result.Comment']
-    }, {
-      id: 2,
-      name: 'youngjin',
-      image: 'cat.png',
-      text: '우리 고영희씨가 더 귀엽지? 😺😺😺',
-      Comment: []
-    }, {
-      id: 3,
-      name: 'youngjin',
-      image: 'cat.png',
-      text: '우리 고영희씨가 더 귀엽지? 😺😺😺',
-      Comment: []
-    }];
-    writeIndexedDB(data);
-
-    function addAllSearchedPosts(searchkey) {
-      var request = window.indexedDB.open('catstagramTable');
-      request.onerror = function(event) {
-        console.log(event.target.errorCode);
-      }
-      request.onsuccess = function(event) {
-        var db = this.result;
-        var transaction = db.transaction(['person']);
-        transaction.onerror = function(event) {
-          console.log('addAllSearchedPosts fail');
-        }
-        transaction.oncomplete = function(event) {
-          console.log('addAllSearchedPosts done');
-        }
-        var objectStore = transaction.objectStore('person');
-        var request = objectStore.openCursor();
-        request.onsuccess = function(event) {
-          var cursor = event.target.result;
-          if (cursor) {
-            request = objectStore.get(cursor.key);
-            request.onsuccess = function(event) {
-              console.log("addAllSearchedPosts::onsucess -> " + event.target.result);
-              imageTag = `
-									<div class="cell" style=" cursor: pointer;" onclick="location.replace('detail.html?id=` + event.target.result.id + `');">
-                    <img src="` + event.target.result.image + `" width=100% height=100%>
-                  </div>`;
-              document.querySelector("#gridView").innerHTML += imageTag;
-            }
-            cursor.continue();
-          }
-        }
-      }
-    }
-    let searchkey = window.location.href.split('key=')[0];
-    console.log(searchkey);
-    
-    addAllSearchedPosts(searchkey);
-  </script>
   <style>
     #gridView {
       margin : 1rem;
@@ -123,6 +18,7 @@
       aspect-ratio : 1 / 1;
     }
   </style>
+
   <body>
     <main>
       <header>
@@ -140,7 +36,7 @@
               </defs>
               </svg>
           </div>
-          <div class="upload" onclick="location.replace('upload.html')">
+          <div class="upload" onclick="location.href('upload.html')">
             <svg width="90" height="90" viewBox="0 0 90 90" fill="none" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
               <rect width="90" height="90" fill="url(#pattern0)" />
               <defs>
@@ -152,7 +48,7 @@
             </svg>
           </div>
           <input class="searchbar" type="text" id="searchbar">
-          <input class="searchbtn" type="button" value="search" style=" cursor: pointer;" onclick="location.replace('search.html?key='+document.getElementById('searchbar').value);">
+          <input class="searchbtn" type="button" value="search" style=" cursor: pointer;" onclick="location.href('search.html?key='+document.getElementById('searchbar').value);">
         </div>
       </header>
       <div id = "gridView">

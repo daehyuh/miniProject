@@ -36,6 +36,61 @@ function initApp() {
             content: "슬프다.",
             imageUrl: ["https://images.unsplash.com/photo-1560807707-8cc77767d783"],
         },
+        {
+            author: "나종우",
+            content: "귀여운 내 새끼 하나 더",
+            imageUrl: ["https://images.unsplash.com/photo-1588943211346-0908a1fb0b01?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=735&q=80"],
+        },
+        {
+            author: "오승기",
+            content: "걷기 중",
+            imageUrl: ["https://images.unsplash.com/photo-1583512603805-3cc6b41f3edb?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=880&q=80"],
+        },
+        {
+            author: "이영진",
+            content: "재밌는 늑대",
+            imageUrl: ["https://plus.unsplash.com/premium_photo-1667443188826-44d48cb85159?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1470&q=80"],
+        },
+        {
+            author: "류영준",
+            content: "하하호호.",
+            imageUrl: ["https://images.unsplash.com/photo-1583337130417-3346a1be7dee?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=764&q=80"],
+        },
+        {
+            author: "나종우",
+            content: "귀여웡",
+            imageUrl: ["https://images.unsplash.com/photo-1477884213360-7e9d7dcc1e48?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1470&q=80"],
+        },
+        {
+            author: "오승기",
+            content: "ㅎㅎㅎㅎㅎ",
+            imageUrl: ["https://images.unsplash.com/photo-1583511655857-d19b40a7a54e?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1469&q=80"],
+        },
+        {
+            author: "이영진",
+            content: "강아지와",
+            imageUrl: ["https://images.unsplash.com/photo-1529429617124-95b109e86bb8?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=735&q=80"],
+        },
+        {
+            author: "류영준",
+            content: "룰루랄라",
+            imageUrl: ["https://images.unsplash.com/photo-1597633425046-08f5110420b5?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1470&q=80"],
+        },
+        {
+            author: "강대현",
+            content: "하하호호",
+            imageUrl: ["https://images.unsplash.com/photo-1510771463146-e89e6e86560e?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=627&q=80"],
+        },
+        {
+            author: "이영진",
+            content: "어머나 세상에",
+            imageUrl: ["https://images.unsplash.com/photo-1575859431774-2e57ed632664?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=687&q=80"],
+        },
+        {
+            author: "류영준",
+            content: "난 강아지가 좋아",
+            imageUrl: ["https://images.unsplash.com/photo-1548199973-03cce0bbc87b?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1469&q=80"],
+        },
     ]
     
     dummyPosts.forEach((post) => {
@@ -60,7 +115,7 @@ function initApp() {
                           <img src="` + target.imageUrl[0] + `" width="100%" height="100%">
                       </div>
                       <div class="postdiv">
-                      <div class="postdivtext">` + target.author + " " + target.content + `</div>
+                      <div class="postdivtext"> <p style="font-weight:900; display:inline">` + target.author + "</p> " + target.content + `</div>
                   </div>
               </div>`;
             document.querySelector("main").innerHTML += post;

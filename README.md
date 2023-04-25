@@ -4,9 +4,12 @@
 
 ### 강대현, 오승기, 이영진, 류영준
 
-피그마 : https://www.figma.com/file/pK8m50XU5xVjsZ7y73ZVUn/Untitled?node-id=1%3A11&t=aK4cBI9U8VhzW1Vt-1
+깃허브: https://daehyuh318.github.io/miniProject/index.html
+피그마: https://www.figma.com/file/pK8m50XU5xVjsZ7y73ZVUn/Untitled?node-id=1%3A11&t=aK4cBI9U8VhzW1Vt-1
 
-## 메인페이지
-https://daehyuh318.github.io/miniProject/index.html
+<div display='flex'>
 
-![캡처](https://user-images.githubusercontent.com/53990946/233503802-af677bfb-da96-4ce7-b6cc-ff08d56e37ca.PNG)
+![detail](https://user-images.githubusercontent.com/53990946/234262994-c5181c25-3f0e-417a-b2ce-dde04380a128.PNG)
+![index](https://user-images.githubusercontent.com/53990946/234263004-daf47e61-441b-4519-8083-ac4696114a8f.PNG)
+![serch](https://user-images.githubusercontent.com/53990946/234263008-ca82a6d5-f819-476f-9e42-46f9c3e6a8d7.PNG)
+</div>

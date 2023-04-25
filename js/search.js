@@ -21,8 +21,6 @@ function initApp() {
       })
     
     })
-
-
 }
 
 initializeDb.onsuccess = () => {

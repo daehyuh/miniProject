@@ -15,7 +15,6 @@ main{
     width: 644px;
     min-height: 1080px;
     height: auto;
-    margin-top: 120px;
    /* padding-bottom: 100px;
     */
     background: #262626;
@@ -36,13 +35,13 @@ header{
 /* 팻스타그램 메인문구 */
 .maintext{
     position: absolute;
-    width: 250px;
+    width: auto;
     height: auto;
-    left: 200px;
+    left: 180px;
     top: 10px;
     font-family: 'Butterfly Kids';
     font-style: normal;
-    font-weight: 400;
+    font-weight: 300;
     font-size: 60px;
     line-height: 83px;
     color: #FFFFFF;
@@ -70,6 +69,13 @@ header{
     color: white;
 
     cursor: pointer; 
+}
+
+
+.name{
+    display: block;
+    margin: auto;
+
 }
 
 .submitButton { 

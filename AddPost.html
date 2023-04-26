@@ -34,6 +34,10 @@
                 </div>
             </div>
         </header>
+        <div class="user-input">
+            <textarea placeholder="글을 입력하세요" cols="70" rows="10"></textarea>
+        </div>
+        <div class="image-show" id="image-show" onchange="showImage()"></div>
         <!-- 이미지 업로드하는 부분-->
         <div class="upload">
             <div class="image-upload" id="image-upload">
@@ -54,12 +58,8 @@
                         </label>
                     </div>
                     <input type="file" id="chooseFile" name="chooseFile" accept="image/*" onchange="loadFile(this)">
-                    <div class="image-show" id="image-show" onchange="showImage()"></div>
                 </form>
             </div>
-        </div>
-        <div class="user-input">
-            <textarea placeholder="글을 입력하세요" cols="70" rows="10"></textarea>
         </div>
     </main>
 </body>

@@ -25,4 +25,3 @@ function initApp() {
 initializeDb.onsuccess = () => {
     initApp();
 };
-

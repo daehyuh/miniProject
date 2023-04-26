@@ -1,5 +1,4 @@
 const initializeDb = indexedDB.open('instagram', 1)
-let filePath = ''
 
 function showImage() {
     var newImage = document.getElementById('image-show').lastElementChild;
@@ -11,10 +10,7 @@ function showImage() {
 }
 
 function loadFile(input) {
-
-
     var file = input.files[0];	//선택된 파일 가져오기
-
 
   	//새로운 이미지 div 추가
     var newImage = document.createElement("img");
@@ -39,32 +35,42 @@ var name = document.getElementById('name').value;
 var text = document.getElementById('text').value;
 
 var base64String;
+
 var filedata = file.files[0];
-var reader = new FileReader();
 
-reader.onload = () => {
-  base64String = reader.result.split(',')[1];
-  var data = new Object() ;
-  data.author = name;
-  data.content = text;
-  data.imageUrl = [base64String];
-  console.log(data);
+var list = [];
+
+
+for (var index = 0; index < file.files.length; index++) {
+  console.log(index, file.files[index]);
+
+  var reader = new FileReader();
+
+  reader.onload = (e) => {
+    base64String = reader.result.split(',')[1];
+    var data = new Object() ;
+    data.author = name;
+    data.content = text;
+    data.imageUrl = [base64String];
+    console.log(data);
+    console.log(e.target.result);
+    list.push(e.target.result)
+    
+    var storeName = "posts";
+    var database = initializeDb.result
+    var transaction = database.transaction([storeName], 'readwrite')
+    var store = transaction.objectStore(storeName)
+    
+    if (reader=='' || name=='' || text==''){
+      alert('데이터가 유효하지 않습니다.');
+    } else{
+      store.add(data);
+      location.href='index.html';
+    }
+  };
   
-  var storeName = "posts";
-  var database = initializeDb.result
-  var transaction = database.transaction([storeName], 'readwrite')
-  var store = transaction.objectStore(storeName)
-  if (reader=='' || name=='' || text==''){
-    alert('데이터가 유효하지 않습니다.');
-  } else{
-    store.add(data);
-    location.href='index.html';
-  }
-};
-
-reader.readAsDataURL(filedata);
-
-
+  reader.readAsDataURL(file.files[index]);
+}
 }
 
 function getDataUrl(img) {

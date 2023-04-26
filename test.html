@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        var file = document.querySelector('#myFile');
+        var result;
+    
+    // 정상 로드시 result에 인코딩 값을 저장하기
+    var reader = new FileReader(file);
+    reader.onload = function() {
+      result = reader.result;
+    }
+    
+    console.log(result,'1')
+    
+    // 실패할 경우 에러 출력하기
+    reader.onerror = function (error) {
+       console.log('Error');
+    };
+        </script>
+</head>
+<body>
+    <input type="file" id="myFile" />
+</html>

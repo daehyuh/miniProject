@@ -6,7 +6,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="css/AddPost.css">
-    <script type="text/javascript" src="js/post.js"></script>
+    <script  type="text/javascript" src="js/post.js"></script>
     <title>새 게시물</title>
 </head>
 
@@ -29,13 +29,14 @@
                         </defs>
                     </svg>
                 </div>
-                <div class="buttonContainer" onclick="location.replace('index.html')">
+                <div class="buttonContainer" onclick="upload()">
                     <div class="submitButton" id="submitButton">SUBMIT</div>
                 </div>
             </div>
         </header>
         <div class="user-input">
-            <textarea placeholder="글을 입력하세요" cols="70" rows="10"></textarea>
+            <input class="name" type="text" id="name" placeholder="이름을 입력하세요"/>
+            <textarea placeholder="글을 입력하세요" id="text" cols="70" rows="10"></textarea>
         </div>
         <div class="image-show" id="image-show" onchange="showImage()"></div>
         <!-- 이미지 업로드하는 부분-->
@@ -57,7 +58,7 @@
                             </svg>
                         </label>
                     </div>
-                    <input type="file" id="chooseFile" name="chooseFile" accept="image/*" onchange="loadFile(this)">
+                    <input type="file" multiple id="chooseFile" name="chooseFile" accept="image/*" onchange="loadFile(this);">
                 </form>
             </div>
         </div>

@@ -35,30 +35,17 @@ function loadFile(input) {
 
 function upload(){
 var file = document.getElementById('chooseFile');
+var name = document.getElementById('name').value;
+var text = document.getElementById('text').value;
 
-for (let index = 0; index < file.files.length; index++) {
-  var filedata = file.files[index];
-
-  
-}
+var base64String;
+var filedata = file.files[0];
 
 var reader = new FileReader();
-var base64String;
+
 reader.onload = () => {
   base64String = reader.result.split(',')[1];
 
-  // Do something with the base64 string
-  // base64 문자열로 무언가를 수행하기
-  // console.log(base64String);
-  
-  // console.log(reader.toString())/
-  
-  var name = document.getElementById('name').value;
-  var text = document.getElementById('text').value;
-  // console.log('파일 경로 : ' + base64String);
-  // console.log('작성자 이름 : ' + name);
-  // console.log('내용 : ' + text);
-  
   var data = new Object() ;
   data.author = name;
   data.content = text;
@@ -80,7 +67,10 @@ if (reader=='' || name=='' || text==''){
 
 // Read the file as a data URL
 // 파일을 데이터 URL로 읽기
+
 reader.readAsDataURL(filedata);
+
+
 // 
 }
 

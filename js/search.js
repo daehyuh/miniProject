@@ -16,7 +16,6 @@ function initApp() {
       <div style='color:white'>`+target.content+`</div>
       </div>
       `;
-        
       document.querySelector("#gridView").innerHTML += imageTag;
       })
     

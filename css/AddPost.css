@@ -134,6 +134,11 @@ label {
 
 .user-input {
     position: absolute; 
-    bottom: 30px;
-    left: 10px
+    top: 30px;
+    left: 10px;
+}
+
+textarea { 
+    background-color: black;
+    color: white;
 }

@@ -40,12 +40,10 @@ var text = document.getElementById('text').value;
 
 var base64String;
 var filedata = file.files[0];
-
 var reader = new FileReader();
 
 reader.onload = () => {
   base64String = reader.result.split(',')[1];
-
   var data = new Object() ;
   data.author = name;
   data.content = text;
@@ -56,22 +54,17 @@ reader.onload = () => {
   var database = initializeDb.result
   var transaction = database.transaction([storeName], 'readwrite')
   var store = transaction.objectStore(storeName)
-if (reader=='' || name=='' || text==''){
-  alert('데이터가 유효하지 않습니다.');
-  return false;
-} else{
-  store.add(data);
-  // location.href='index.html';
-}
+  if (reader=='' || name=='' || text==''){
+    alert('데이터가 유효하지 않습니다.');
+  } else{
+    store.add(data);
+    location.href='index.html';
+  }
 };
-
-// Read the file as a data URL
-// 파일을 데이터 URL로 읽기
 
 reader.readAsDataURL(filedata);
 
 
-// 
 }
 
 function getDataUrl(img) {

@@ -15,11 +15,11 @@ function initApp() {
                 target.imageUrl.forEach(function(data, idx){
                     if(idx==0){
                         imgdiv+=`<div class="carousel-item active">
-                        <img src="`+data+`" class="d-block" alt="..." width="100%" height="50%">
+                        <img src="data:image/jpeg;base64,`+data+`" class="d-block" alt="..." width="100%" height="50%">
                         </div>`
                     } else{
                         imgdiv+=`<div class="carousel-item">
-                        <img src="`+data+`" class="d-block" alt="..." width="100%" height="100%">
+                        <img src="data:image/jpeg;base64,`+data+`" class="d-block" alt="..." width="100%" height="100%">
                         </div>`
                     }
                 });

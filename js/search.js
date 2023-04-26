@@ -12,11 +12,11 @@ function initApp() {
       var imageTag = `
       <div style='background-color:black;padding:10px 10px 50px 10px'>
       <h2 style="margin:0px auto; padding:0px auto; color:white;margin-bottom: 5px;">`+target.author+`</h2>
-      <div class="cell" style=" cursor: pointer;" onclick="location.replace('Detail.html?id=` + target.id + `');"> <img src="` + target.imageUrl[0] + `" width=100% height=100%> </div>
+      <div class="cell" style=" cursor: pointer;" onclick="location.replace('Detail.html?id=` + target.id + `');"> <img src="data:image/jpeg;base64,` + target.imageUrl[0] + `" width=100% height=100%> </div>
       <div style='color:white'>`+target.content+`</div>
       </div>
       `;
-
+        
       document.querySelector("#gridView").innerHTML += imageTag;
       })
     
